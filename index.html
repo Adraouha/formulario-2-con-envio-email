@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>select, radio, checkbox</title>
+  </head>
+  <body>
+    <h1>select, radio button, checkbox / fieldset, legend</h1>
+
+    <form action="https://formsubmit.co/ae308d2daec1780c70e7e0b5b66105a8" method="POST">
+      <div class="container">
+
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="recibido.html">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <!-- datos personales -->
+        <fieldset>
+          <legend>datos personales</legend>
+          <label for="nombre">nombre:</label>
+          <input type="text" name="nombre" id="nombre" />
+
+          <label for="email">email:</label>
+          <input type="email" name="email" id="email" />
+
+            <img src="img/car_tag_48.png" alt="" class="cocheicon">
+
+        </fieldset>
+
+        <!-- opciones del coche -->
+        <fieldset>
+          <legend>opciones compra</legend>
+
+          <!-- select-option para menu desplegable -->
+          <label for="coche">Selecciona coche:</label>
+          <select name="coche" id="coche">
+            <option value="ninguno">ninguno</option>
+            <option value="2 caballos">el coche de mi abuelo</option>
+            <option value="Maserati">el coche de mi jefe</option>
+            <option value="Ferrari">mi futuro coche</option>
+          </select>
+
+          <!-- radio button precisa del mismo NAME para todos -->
+          <div class="subtitulo">país de matriculación:</div>
+
+          <div>
+            <input type="radio" name="matricula" value="espana" id="espana" />
+            <label for="espana">España</label>
+          </div>
+
+          <div>
+            <input type="radio" name="matricula" value="andorra" id="andorra" />
+            <label for="andorra">Andorra</label>
+          </div>
+
+          <div>
+            <input type="radio" name="matricula" value="francia" id="francia" />
+            <label for="francia">Francia</label>
+          </div>
+
+          <div class="subtitulo">extras:</div>
+          <!-- checkbox: puedes elegir más de una opción -->
+          <div>
+            <input
+              type="checkbox"
+              name="extra1"
+              id="elevalunas"
+              value="elevalunas"
+            />
+            <label for="elevalunas">elevalunas eléctrico</label>
+          </div>
+
+          <div>
+            <input type="checkbox" name="extra2" id="sensor" value="sensor" />
+            <label for="sensor">sensor aparcar</label>
+          </div>
+          <div>
+            <input type="checkbox" name="extra3" id="airbags" value="airbags" />
+            <label for="airbags">airbags</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              name="extra4"
+              id="calefactables"
+              value="calefactables"
+            />
+            <label for="calefactables">asientos calefactables</label>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit">enviar!</button>
+    </form>
+  </body>
+</html>
