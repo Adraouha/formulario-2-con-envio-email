@@ -4,95 +4,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>select, radio, checkbox</title>
+    <title>Personalización de tu coche</title>
   </head>
   <body>
-    <h1>select, radio button, checkbox / fieldset, legend</h1>
+    <div class="slogan">
+      <h1 class="titulo">Personaliza tu coche</h1>
+      <img src="img/icono.png" alt="Coche personalizado" class="coche-slogan" />
+    </div>
+    <div class="formulario">
+      <h2 class="titulo-formulario">Configura tu coche ideal</h2>
+      <p>
+        Selecciona las opciones que deseas para tu nuevo coche y envía tu
+        solicitud
+      </p>
+      <form action="/recibido.html" method="GET">
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="recibido.html" />
+        <input type="hidden" name="_captcha" value="false" />
 
-    <form action="https://formsubmit.co/ae308d2daec1780c70e7e0b5b66105a8" method="POST">
-      <div class="container">
+        <div class="container">
+          <!-- datos personales -->
+          <fieldset>
+            <legend>Datos personales</legend>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Ingresa tu nombre"
+                required
+              />
+            </div>
 
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://albertiron2026.github.io/formulario-2-con-envio-email/recibido.html">
-        <input type="hidden" name="_captcha" value="false">
-        
-        <!-- datos personales -->
-        <fieldset>
-          <legend>datos personales</legend>
-          <label for="nombre">nombre:</label>
-          <input type="text" name="nombre" id="nombre" />
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Ingresa tu email"
+                required
+              />
+            </div>
+            <figure class="logo">
+              <img src="img/icono.png" alt="Icono de coche" class="cocheicon" />
+              <h4 class="subtitulo-logo">
+                <span>COPE</span> - Coche Personalizado
+              </h4>
+            </figure>
+          </fieldset>
 
-          <label for="email">email:</label>
-          <input type="email" name="email" id="email" />
+          <!-- opciones del coche -->
+          <fieldset>
+            <legend>Opciones de compra</legend>
 
-            <img src="img/car_tag_48.png" alt="" class="cocheicon">
+            <!-- select-option para menu desplegable -->
+            <div class="form-group">
+              <label for="coche">Selecciona modelo de coche:</label>
+              <select name="coche" id="coche" required>
+                <option value="">Selecciona una opción</option>
+                <option value="ninguno">Ninguno</option>
+                <option value="2 caballos">2 Caballos</option>
+                <option value="Maserati">Maserati</option>
+                <option value="Ferrari">Ferrari</option>
+              </select>
+            </div>
 
-        </fieldset>
+            <!-- radio button precisa del mismo NAME para todos -->
+            <div class="form-group">
+              <div class="subtitulo">País de matriculación:</div>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    name="matricula"
+                    value="espana"
+                    id="espana"
+                    required
+                  />
+                  <label for="espana">España</label>
+                </div>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    name="matricula"
+                    value="andorra"
+                    id="andorra"
+                  />
+                  <label for="andorra">Andorra</label>
+                </div>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    name="matricula"
+                    value="francia"
+                    id="francia"
+                  />
+                  <label for="francia">Francia</label>
+                </div>
+              </div>
+            </div>
 
-        <!-- opciones del coche -->
-        <fieldset>
-          <legend>opciones compra</legend>
-
-          <!-- select-option para menu desplegable -->
-          <label for="coche">Selecciona coche:</label>
-          <select name="coche" id="coche">
-            <option value="ninguno">ninguno</option>
-            <option value="2 caballos">el coche de mi abuelo</option>
-            <option value="Maserati">el coche de mi jefe</option>
-            <option value="Ferrari">mi futuro coche</option>
-          </select>
-
-          <!-- radio button precisa del mismo NAME para todos -->
-          <div class="subtitulo">país de matriculación:</div>
-
-          <div>
-            <input type="radio" name="matricula" value="espana" id="espana" />
-            <label for="espana">España</label>
-          </div>
-
-          <div>
-            <input type="radio" name="matricula" value="andorra" id="andorra" />
-            <label for="andorra">Andorra</label>
-          </div>
-
-          <div>
-            <input type="radio" name="matricula" value="francia" id="francia" />
-            <label for="francia">Francia</label>
-          </div>
-
-          <div class="subtitulo">extras:</div>
-          <!-- checkbox: puedes elegir más de una opción -->
-          <div>
-            <input
-              type="checkbox"
-              name="extra1"
-              id="elevalunas"
-              value="elevalunas"
-            />
-            <label for="elevalunas">elevalunas eléctrico</label>
-          </div>
-
-          <div>
-            <input type="checkbox" name="extra2" id="sensor" value="sensor" />
-            <label for="sensor">sensor aparcar</label>
-          </div>
-          <div>
-            <input type="checkbox" name="extra3" id="airbags" value="airbags" />
-            <label for="airbags">airbags</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              name="extra4"
-              id="calefactables"
-              value="calefactables"
-            />
-            <label for="calefactables">asientos calefactables</label>
-          </div>
-        </fieldset>
-      </div>
-      <button type="submit">enviar!</button>
-    </form>
+            <div class="form-group">
+              <div class="subtitulo">Extras:</div>
+              <!-- checkbox: puedes elegir más de una opción -->
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="extra1"
+                    id="elevalunas"
+                    value="elevalunas"
+                  />
+                  <label for="elevalunas">Elevalunas eléctrico</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="extra2"
+                    id="sensor"
+                    value="sensor"
+                  />
+                  <label for="sensor">Sensor de aparcamiento</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="extra3"
+                    id="airbags"
+                    value="airbags"
+                  />
+                  <label for="airbags">Airbags</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="extra4"
+                    id="calefactables"
+                    value="calefactables"
+                  />
+                  <label for="calefactables">Asientos calefactables</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit">Enviar Solicitud</button>
+      </form>
+    </div>
   </body>
 </html>
